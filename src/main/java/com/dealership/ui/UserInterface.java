@@ -97,27 +97,59 @@ public class UserInterface {
     }
 
     private void processGetByPriceRequest() {
-        // Add logic later
+        System.out.println("Enter minimum price:");
+        double minPrice = Double.parseDouble(scanner.nextLine());
+        System.out.println("Enter maximum price:");
+        double maxPrice = Double.parseDouble(scanner.nextLine());
+
+        List<Vehicle> vehicles = dealership.getVehiclesByPrice(minPrice, maxPrice);
+        displayVehicles(vehicles);
     }
 
     private void processGetByMakeModelRequest() {
-        // Add logic later
+        System.out.println("Enter make:");
+        String make = scanner.nextLine();
+        System.out.println("Enter model:");
+        String model = scanner.nextLine();
+
+        List<Vehicle> vehicles = dealership.getVehiclesByMakeModel(make, model);
+        displayVehicles(vehicles);
     }
 
     private void processGetByYearRequest() {
-        // Add logic later
+        System.out.println("Enter minimum year:");
+        int minYear = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter maximum year:");
+        int maxYear = Integer.parseInt(scanner.nextLine());
+
+        List<Vehicle> vehicles = dealership.getVehiclesByYear(minYear, maxYear);
+        displayVehicles(vehicles);
     }
 
     private void processGetByColorRequest() {
-        // Add logic later
+        System.out.println("Enter color:");
+        String color = scanner.nextLine();
+
+        List<Vehicle> vehicles = dealership.getVehiclesByColor(color);
+        displayVehicles(vehicles);
     }
 
     private void processGetByMileageRequest() {
-        // Add logic later
+        System.out.println("Enter minimum mileage:");
+        int minMileage = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter maximum mileage:");
+        int maxMileage = Integer.parseInt(scanner.nextLine());
+
+        List<Vehicle> vehicles = dealership.getVehiclesByMileage(minMileage, maxMileage);
+        displayVehicles(vehicles);
     }
 
     private void processGetByVehicleTypeRequest() {
-        // Add logic later
+        System.out.println("Enter vehicle type:");
+        String vehicleType = scanner.nextLine();
+
+        List<Vehicle> vehicles = dealership.getVehiclesByType(vehicleType);
+        displayVehicles(vehicles);
     }
 
     private void processAddVehicleRequest() {
