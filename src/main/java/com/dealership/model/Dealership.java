@@ -25,6 +25,19 @@ public class Dealership {
         return result;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+
     public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
         ArrayList<Vehicle> result = new ArrayList<>();
         for (Vehicle vehicle : inventory) {

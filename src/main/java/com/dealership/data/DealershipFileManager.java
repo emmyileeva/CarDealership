@@ -4,7 +4,9 @@ import com.dealership.model.Dealership;
 import com.dealership.model.Vehicle;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class DealershipFileManager {
 
@@ -47,6 +49,27 @@ public class DealershipFileManager {
     }
 
     public void saveDealership(Dealership dealership) {
-        // add logic later
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("inventory.txt"));
+            writer.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhoneNumber());
+            writer.newLine();
+
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                String line = vehicle.getVin() + "|" +
+                        vehicle.getYear() + "|" +
+                        vehicle.getMake() + "|" +
+                        vehicle.getModel() + "|" +
+                        vehicle.getVehicleType() + "|" +
+                        vehicle.getColor() + "|" +
+                        vehicle.getOdometer() + "|" +
+                        String.format("%.2f", vehicle.getPrice());
+
+                writer.write(line);
+                writer.newLine();
+            }
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
