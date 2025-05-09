@@ -153,11 +153,42 @@ public class UserInterface {
     }
 
     private void processAddVehicleRequest() {
-        // Add logic later
+        System.out.println("Enter VIN:");
+        int vin = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter year:");
+        int year = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter make:");
+        String make = scanner.nextLine();
+        System.out.println("Enter model:");
+        String model = scanner.nextLine();
+        System.out.println("Enter vehicle type:");
+        String vehicleType = scanner.nextLine();
+        System.out.println("Enter color:");
+        String color = scanner.nextLine();
+        System.out.println("Enter mileage:");
+        int odometer = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter price:");
+        double price = Double.parseDouble(scanner.nextLine());
+
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+        dealership.addVehicle(vehicle);
+
+        // Save the vehicle to file
+        DealershipFileManager fileManager = new DealershipFileManager();
+        fileManager.saveDealership(dealership);
+        System.out.println("Vehicle added successfully.");
     }
 
     private void processRemoveVehicleRequest() {
-        // Add logic later
+        System.out.println("Enter VIN of vehicle to remove:");
+        int vin = Integer.parseInt(scanner.nextLine());
+
+        dealership.removeVehicle(vin);
+
+        // Save the vehicle to file
+        DealershipFileManager fileManager = new DealershipFileManager();
+        fileManager.saveDealership(dealership);
+        System.out.println("Vehicle removed successfully.");
     }
 
 }
