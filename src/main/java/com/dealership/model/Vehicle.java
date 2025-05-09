@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.dealership.model;
 
 public class Vehicle {
     private int vin;
