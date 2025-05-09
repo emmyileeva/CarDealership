@@ -39,31 +39,31 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
-                    // display all vehicles
+                    processAllVehiclesRequest();
                     break;
                 case "2":
-                    // search by make and model
+                    processGetByMakeModelRequest();
                     break;
                 case "3":
-                    // search by year
+                    processGetByYearRequest();
                     break;
                 case "4":
-                    // search by color
+                    processGetByColorRequest();
                     break;
                 case "5":
-                    // search by mileage
+                    processGetByMileageRequest();
                     break;
                 case "6":
-                    // search by type
+                    processGetByVehicleTypeRequest();
                     break;
                 case "7":
-                    // search by price
+                    processGetByPriceRequest();
                     break;
                 case "8":
-                    // add a vehicle
+                    processAddVehicleRequest();
                     break;
                 case "9":
-                    // remove a vehicle
+                    processRemoveVehicleRequest();
                     break;
                 default:
                     if (!choice.equals("exit")) {
